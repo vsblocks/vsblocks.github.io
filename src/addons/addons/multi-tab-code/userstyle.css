@@ -1,0 +1,194 @@
+.tab-scroller {
+  width: calc(max-content + 2px);
+  display: flex;
+  position: absolute;
+  right: 2px;
+}
+
+.tab-scrollbar {
+  position: absolute;
+  background-color: black;
+  height: 1px;
+  width: 20px;
+  bottom: 0;
+}
+
+.tab-scrollbar:hover {
+  height: 3px;
+}
+
+.tab-wrapper {
+  position: absolute;
+  right: 0;
+  padding-top: 0.5rem;
+  height: calc(2.5rem + 1px);
+  overflow-x: hidden;
+  overflow-y: visible;
+  scrollbar-width: thin;
+  background-color: var(--ui-primary, hsla(215, 100%, 95%, 1));
+  border-bottom: 1px solid var(--ui-secondary, hsla(215, 75%, 95%, 1));
+}
+
+.tab-wrapper.copying {
+  height: calc(2.7rem + 1px);
+}
+
+.tab-adder-button {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  margin-right: 11px;
+  margin-left: 11px;
+  border-radius: 3px;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+[theme=dark] .tab-adder-button {
+  filter: invert(1);
+}
+
+.tab-adder-button:hover {
+  background-color: rgba(0 0 0 / 15%);
+}
+
+.tab-bounds {
+  height: 2rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: calc(max-content + 2px);
+  position: relative;
+  right: 2px;
+}
+
+.tab-bounds.copying {
+  height: 2rem;
+}
+
+.tab {
+  flex-grow: 1;
+  height: 80%;
+  margin: 0;
+  border-radius: 0.4rem 0.4rem 0 0;
+  border: none;
+  border-bottom: none;
+  padding: 0.1rem 1.25rem 0;
+  font-size: 0.75rem;
+  background-color: var(--ui-tertiary, hsla(215, 50%, 90%, 1));
+  color: hsla(225, 15%, 40%, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  height: 2rem;
+  opacity: 1;
+}
+
+.tab.unselected {
+  opacity: 0.6;
+  background-color: var(--ui-primary);
+  color: inherit;
+}
+
+.tab.hover {
+  background-color: var(--ui-secondary, hsla(215, 75%, 95%, 1));
+  opacity: 1;
+  cursor: pointer;
+}
+
+.tab.selected {
+  color: var(--text-primary, hsla(225, 15%, 40%, 1));
+  background-color: var(--ui-secondary, hsla(215, 75%, 95%, 1));
+}
+
+.tab.copying {
+  color: var(--text-primary, hsla(225, 15%, 40%, 1));
+}
+
+.tab.reordering {
+  opacity: 0.8;
+  cursor: grabbing;
+  background-color: var(--ui-secondary, hsla(215, 75%, 95%, 1));
+  box-shadow: inset 0 0 0 1px var(--text-primary, hsla(225, 15%, 40%, 1));
+}
+
+.tab-wrapper.reordering {
+  cursor: grabbing;
+}
+
+.tab-context-menu {
+  min-width: 130px;
+  max-width: 320px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  text-align: left;
+  color: var(--text-primary, hsla(225, 15%, 40%, 1));
+  background-color: hsla(0, 100%, 100%, 1);
+  border: 1px solid var(--ui-black-transparent, hsla(0, 0%, 0%, 0.15));
+  border-radius: calc(0.4rem / 2);
+  box-shadow: 0px 0px 5px 1px hsla(0, 0%, 0%, 0.15);
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.2s ease;
+  z-index: 10000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+[theme="dark"] .tab-context-menu {
+  background-color: var(--ui-primary, hsla(215, 100%, 95%, 1));
+}
+
+.tab-context-item {
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-context-item:hover {
+  background-color: var(--ui-secondary, hsla(215, 75%, 95%, 1));
+}
+
+.tab-context-item.danger {
+  color: hsla(0, 100%, 65%, 1);
+}
+
+.tab-context-item.disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.tab-context-item.disabled:hover {
+  background-color: transparent;
+}
+
+.tab-context-header {
+  padding: 0.4rem 0.75rem 0.15rem;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.tab-context-separator {
+  height: 1px;
+  margin: 5px 0;
+  background-color: var(--ui-black-transparent, hsla(0, 0%, 0%, 0.15));
+}
+
+.gui_watermark_3oGgV {
+  position: absolute;
+  top: 2.9rem;
+  pointer-events: none;
+}

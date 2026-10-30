@@ -1,0 +1,435 @@
+/*
+ * Visual no estilo do editor (PenguinMod/Scratch): botões em pílula, cartões com borda de 2px,
+ * cantos de 0.5rem e as variáveis de tema do próprio editor.
+ * O valor depois da vírgula é só fallback; se o seu fork usa outros nomes de variável, troque aqui.
+ */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+    color: var(--text-primary, #575e75);
+    background: var(--ui-primary, #e5f0ff);
+}
+
+.scroll {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* ---------- cartões ---------- */
+
+.card,
+.hero,
+.userBar {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.85rem;
+    background: var(--ui-secondary, #ffffff);
+    border: 2px solid var(--ui-black-transparent, rgba(0, 0, 0, 0.15));
+    border-radius: 0.5rem;
+}
+
+.cardTitle {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.grow {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.muted {
+    margin: 0;
+    font-size: 0.72rem;
+    opacity: 0.75;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- login ---------- */
+
+.hero {
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.heroMark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    color: #fff;
+    background: #24292f;
+    border-radius: 50%;
+}
+
+.heroTitle {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.heroText {
+    margin: 0;
+    max-width: 26rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.details {
+    width: 100%;
+    max-width: 26rem;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.details summary {
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+}
+
+.detailsBody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.6rem;
+}
+
+/* ---------- usuário ---------- */
+
+.userBar {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.avatar {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background: var(--ui-tertiary, #c7d3e6);
+}
+
+.userName {
+    font-size: 0.9rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- campos e botões ---------- */
+
+.input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font: inherit;
+    font-size: 0.85rem;
+    color: inherit;
+    background: var(--ui-primary, #e5f0ff);
+    border: 2px solid var(--ui-black-transparent, rgba(0, 0, 0, 0.15));
+    border-radius: 0.5rem;
+}
+
+.input:focus {
+    border-color: var(--motion-primary, #4c97ff);
+    outline: none;
+}
+
+.textarea {
+    resize: vertical;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.buttonPrimary,
+.buttonSecondary,
+.buttonGithub {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: filter 0.15s ease;
+}
+
+.buttonPrimary {
+    color: #fff;
+    background: var(--motion-primary, #4c97ff);
+    border: 2px solid var(--motion-tertiary, #3373cc);
+}
+
+.buttonSecondary {
+    color: inherit;
+    background: transparent;
+    border: 2px solid var(--ui-black-transparent, rgba(0, 0, 0, 0.2));
+}
+
+.buttonGithub {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.95rem;
+    color: #fff;
+    background: #24292f;
+    border: 2px solid #24292f;
+}
+
+.buttonPrimary:hover:not(:disabled),
+.buttonGithub:hover:not(:disabled) {
+    filter: brightness(1.12);
+}
+
+.buttonSecondary:hover:not(:disabled) {
+    background: var(--ui-tertiary, #c7d3e6);
+}
+
+.buttonPrimary:focus-visible,
+.buttonSecondary:focus-visible,
+.buttonGithub:focus-visible,
+.repoItem:focus-visible {
+    outline: 2px solid var(--motion-primary, #4c97ff);
+    outline-offset: 2px;
+}
+
+.buttonPrimary:disabled,
+.buttonSecondary:disabled,
+.buttonGithub:disabled,
+.repoItem:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ---------- lista de repositórios ---------- */
+
+.repoList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-height: 22rem;
+    overflow-y: auto;
+}
+
+.repoItem {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    background: var(--ui-primary, #e5f0ff);
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+}
+
+.repoItem:hover:not(:disabled) {
+    background: var(--ui-tertiary, #c7d3e6);
+    border-color: var(--motion-primary, #4c97ff);
+}
+
+.repoItemName {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.repoItemDesc {
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- painel do repositório ---------- */
+
+.repoTitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.branchLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.pill {
+    padding: 0.15rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+    border-radius: 2rem;
+}
+
+.pillDirty {
+    color: #fff;
+    background: var(--control-primary, #ffab19);
+}
+
+.pillClean {
+    color: #fff;
+    background: var(--pen-primary, #0fbd8c);
+}
+
+/* histórico: a linha do tempo marca a ordem dos commits */
+
+.commits {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.commit {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0 0.5rem 1.2rem;
+}
+
+.commit::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    width: 0.65rem;
+    height: 0.65rem;
+    margin-top: -0.33rem;
+    background: var(--motion-primary, #4c97ff);
+    border: 2px solid var(--ui-secondary, #ffffff);
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px var(--motion-primary, #4c97ff);
+}
+
+.commit::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.3rem;
+    width: 2px;
+    background: var(--ui-black-transparent, rgba(0, 0, 0, 0.15));
+}
+
+.commit:first-child::after {
+    top: 50%;
+}
+
+.commit:last-child::after {
+    bottom: 50%;
+}
+
+.commitActions {
+    display: flex;
+    flex: none;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.35rem;
+}
+
+.commitMessage {
+    font-size: 0.85rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- mensagens ---------- */
+
+.message {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+}
+
+.messageBusy {
+    background: var(--ui-tertiary, #c7d3e6);
+}
+
+.messageError {
+    color: #fff;
+    background: var(--error-primary, #ff4c4c);
+}
+
+.messageInfo {
+    color: #fff;
+    background: var(--pen-primary, #0fbd8c);
+}
+
+.spinner {
+    flex: none;
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 2px solid var(--ui-black-transparent, rgba(0, 0, 0, 0.2));
+    border-top-color: var(--motion-primary, #4c97ff);
+    border-radius: 50%;
+    animation: git-tab-spin 0.8s linear infinite;
+}
+
+@keyframes git-tab-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spinner {
+        animation-duration: 3s;
+    }
+
+    .buttonPrimary,
+    .buttonSecondary,
+    .buttonGithub {
+        transition: none;
+    }
+}
