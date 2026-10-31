@@ -47,6 +47,9 @@ import runAddons from '../addons/entry';
 import styles from './interface.css';
 import restore from './restore.js';
 
+if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    window.location.replace('/editor.html' + window.location.search + window.location.hash);
+}
 const urlparams = new URLSearchParams(location.search);
 const restoring = urlparams.get('restore');
 const restoreHandler = urlparams.get('handler');
