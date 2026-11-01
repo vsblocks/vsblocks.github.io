@@ -88,8 +88,9 @@ import jwIntExtensionThumb from './penguinmod/extensions/jwInt.svg';
 import iygPerlinNoiseExtensionIcon from './penguinmod/extensions/perlinnoisebanner.png';
 
 // thank yo godslayerakp for makin pmCamera :good:
-import pmCameraExtensionIcon from './penguinmod/extensions/pmcamera_thumbnail.png';vsLoremIpsum
+import pmCameraExtensionIcon from './penguinmod/extensions/pmcamera_thumbnail.png';
 import vsLoremIpsum from './penguinmod/extensions/vsloremipsum_thumbnail.png';
+import vsencryption from './penguinmod/extensions/vscriptografia_thumbnail.png';
 
 // cl waw
 // import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
@@ -349,6 +350,21 @@ const menuItems = [
                 defaultMessage="Adds lorem ipsum blocks."
                 description="The description for the VSblocks lorem ipsum extension."
                 id="vs.extension.loremipsum.description"
+            />
+        ),
+        credits: 'VSblocks',
+        featured: true
+    },
+    {
+        name: 'Encryption Tools',
+        extensionId: 'vsencryption',
+        iconURL: vsencryption,
+        tags: ['vsblocks'],
+        description: (
+            <FormattedMessage
+                defaultMessage="Adds encryption blocks."
+                description="The description for the VSblocks encryption extension."
+                id="vs.extension.encryption.description"
             />
         ),
         credits: 'VSblocks',
