@@ -1,6 +1,5 @@
 name: Deploy to GitHub Pages
 
-
 on:
   push:
     branches: [main]
@@ -10,7 +9,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-
 
 concurrency:
   group: pages
@@ -24,22 +22,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: npm
+          cache: yarn
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps || npm install --legacy-peer-deps --force
+        run: yarn install --frozen-lockfile
 
       - name: Build
         env:
           NODE_ENV: production
-          
           NODE_OPTIONS: --openssl-legacy-provider --max-old-space-size=6144
-        run: npx webpack --bail
+        run: yarn webpack --bail
 
       - name: Prepare output
         run: |
