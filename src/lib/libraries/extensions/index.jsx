@@ -91,6 +91,7 @@ import iygPerlinNoiseExtensionIcon from './penguinmod/extensions/perlinnoisebann
 import pmCameraExtensionIcon from './penguinmod/extensions/pmcamera_thumbnail.png';
 import vsLoremIpsum from './penguinmod/extensions/vsloremipsum_thumbnail.png';
 import vsencryption from './penguinmod/extensions/vscriptografia_thumbnail.png';
+import vspython from './penguinmod/extensions/vspython_thumbnail.png';
 
 // cl waw
 // import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
@@ -365,6 +366,21 @@ const menuItems = [
                 defaultMessage="Adds encryption blocks."
                 description="The description for the VSblocks encryption extension."
                 id="vs.extension.encryption.description"
+            />
+        ),
+        credits: 'VSblocks',
+        featured: true
+    },
+    {
+        name: 'Python',
+        extensionId: 'vspython',
+        iconURL: vspython,
+        tags: ['vsblocks'],
+        description: (
+            <FormattedMessage
+                defaultMessage="Adds Python blocks."
+                description="The description for the VSblocks Python extension."
+                id="vs.extension.python.description"
             />
         ),
         credits: 'VSblocks',
