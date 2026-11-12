@@ -1189,6 +1189,27 @@ const menuItems = [
     {
         name: (
             <FormattedMessage
+                defaultMessage="VSBlocks App Utilities Collection"
+                description="Name of library item to open the App Utilities Collection"
+                id="vsb.apputilitiescollection.name"
+            />
+        ),
+        href: 'https://vsblocks.github.io/app-utilities-Collection/',
+        extensionId: 'special_vsbAppUtilitiesCollection',
+        iconURL: penguinmodLibraryExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="See some user-submitted extensions. Opens in a new tab."
+                description="Description of library item to open the Extra Extensions gallery"
+                id="vsb.apputilitiescollection.description"
+            />
+        ),
+        tags: ['vsblocks', 'library'],
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
                 defaultMessage="TurboWarp Extension Gallery"
                 description="Name of extensions.turbowarp.org in extension library"
                 id="tw.extensionGallery.name"

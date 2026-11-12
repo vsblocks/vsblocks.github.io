@@ -24,6 +24,7 @@ const manuallyTrustExtension = url => {
 const isTrustedExtensionOrigin = url => (
     /* Always trust the official extension repostiories */
     url.startsWith('https://extensions.turbowarp.org/') ||
+    url.startsWith('https://vsblocks.github.io/app-utilities-Collection/') ||
     url.startsWith('https://extensions.penguinmod.com/') ||
     url.startsWith('https://penguinmod-extensions-gallery.vercel.app/') ||
 
@@ -76,6 +77,9 @@ const isAlwaysTrustedForFetching = parsed => (
     // Any PenguinMod service such as projects
     parsed.origin === 'https://penguinmod.com' ||
     parsed.origin.endsWith('.penguinmod.com') ||
+
+    parsed.origin === 'https://vsblocks.github.io/' ||
+    parsed.origin.endsWith('.vsblocks.github.io/') ||
 
     // GitHub
     parsed.origin === 'https://raw.githubusercontent.com' ||
